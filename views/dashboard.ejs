@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      #container {
+        width: 100vw;
+        padding: 20px;
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 15px;
+        }
+      }
+
+      .hh {
+        color: rgb(36, 36, 255);
+        text-align: center;
+      }
+
+      .create-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          padding: 11px 15px;
+          width: 600px;
+          box-shadow: 1px 1px 6px rgb(40, 27, 27);
+          border-radius: 8px;
+          border: none;
+        }
+
+        button {
+          padding: 9px 10px;
+          background-color: rgb(68, 143, 255);
+          color: white;
+          margin-left: 5px;
+          border-radius: 5px;
+          border: none;
+        }
+      }
+
+      #item_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1 class="hh">Todo App</h1>
+      <div class="create-form">
+        <input
+          type="text"
+          id="create_field"
+          name="todo"
+          placeholder="enter todos"
+        />
+        <button class="add_item">Add New Item</button>
+      </div>
+
+      <ul id="item_list" class="list-group p-3"></ul>
+
+      <form method="POST" action="/logout">
+        <button class="logout bg-success border-0 rounded p-2">Log-out</button>
+      </form>
+      <form method="POST" action="/logoutall">
+        <button class="logoutall bg-success border-0 rounded p-2">
+          Log-out from all devices
+        </button>
+      </form>
+
+      <button class="show_more bg-primary border-0 rounded p-1">
+        Show-more
+      </button>
+    </div>
+
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
+  </body>
+</html>
